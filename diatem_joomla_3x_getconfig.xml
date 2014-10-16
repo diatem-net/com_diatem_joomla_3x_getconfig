@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+    <name>com_diatem_joomla_3x_getconfig</name>
+    <creationDate>2014-10-15</creationDate>
+    <copyright>Copyright (C) 2014. Tous droits réservés.</copyright>
+    <license>GNU General Public License version 2 ou version ultérieure ; Voir LICENSE.txt</license>
+    <author>Diatem</author>
+    <authorEmail>contact@diatem.net</authorEmail>
+    <authorUrl>http://www.diatem.net/</authorUrl>
+    <version>0.0.0</version>
+    <description>Composant pour Joomla! 3.x.x. Implémente un service REST sécurisé permettant de récupérer à distance la version de Joomla! ainsi que des modules, composants et plugins utilisés.</description>
+    
+    
+    
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <files folder="site">
+        <filename>index.html</filename>
+        <filename>diatem_joomla_3x_getconfig.php</filename>
+        <filename>controller.php</filename>
+        <filename>router.php</filename>
+		<filename>run.php</filename>
+		<filename>restservice_class.php</filename>
+		<filename>joomlaconfig_class.php</filename>
+		<filename>.htaccess</filename>
+        <folder>views</folder>
+        <folder>models</folder>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+        <folder>assets</folder>
+    </files>
+    <languages folder="site">
+        
+			<language tag="en-GB">language/en-GB/en-GB.com_diatem_joomla_3x_getconfig.ini</language>
+			<language tag="fr-FR">language/fr-FR/fr-FR.com_diatem_joomla_3x_getconfig.ini</language>
+    </languages>
+    <administration>
+        <menu img="components/com_diatem_joomla_3x_getconfig/assets/images/s_com_diatem_joomla_3x_getconfig.png" >COM_DIATEM_JOOMLA_3X_GETCONFIG</menu>
+        <submenu>
+            
+			<menu link="option=com_diatem_joomla_3x_getconfig&amp;view=apropos" view="apropos" img="components/com_diatem_joomla_3x_getconfig/assets/images/s_apropos.png" alt="Diatem_joomla_3x_getconfig/Apropos">COM_DIATEM_JOOMLA_3X_GETCONFIG_TITLE_APROPOS</menu>
+
+        </submenu>
+        <files folder="administrator">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+            <filename>diatem_joomla_3x_getconfig.php</filename>
+            <folder>controllers</folder>
+            <folder>assets</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+            <folder>language</folder>
+        </files>
+        <languages folder="administrator">
+            
+			<language tag="en-GB">language/en-GB/en-GB.com_diatem_joomla_3x_getconfig.ini</language>
+			<language tag="en-GB">language/en-GB/en-GB.com_diatem_joomla_3x_getconfig.sys.ini</language>
+			<language tag="fr-FR">language/fr-FR/fr-FR.com_diatem_joomla_3x_getconfig.ini</language>
+			<language tag="fr-FR">language/fr-FR/fr-FR.com_diatem_joomla_3x_getconfig.sys.ini</language>
+        </languages>
+    </administration>
+    <plugins>
+        <plugin group="search" plugin="diatem_joomla_3x_getconfig"/>
+    </plugins>
+    
+</extension>
+<!-- Component built by the Joomla Component Creator -->
+<!-- http://www.component-creator.com/ -->
