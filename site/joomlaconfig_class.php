@@ -77,7 +77,7 @@ class JoomlaConfig {
 	// Select all records from the user profile table where key begins with "custom.".
 	// Order it by the ordering field.
 	$query->select($db->quoteName(array('extension_id', 'name', 'type', 'manifest_cache', 'enabled')));
-	$query->from($db->quoteName('tb_extensions'));
+	$query->from($db->quoteName('#__extensions'));
 	
 	// Reset the query using our newly populated query object.
 	$db->setQuery($query);
@@ -91,7 +91,8 @@ class JoomlaConfig {
 		&& ($r->type == 'module' || $r->type == 'component' || $r->type == 'plugin')
 		&& $r->name != 'plg_editors_codemirror'
 		&& $r->name != 'plg_editors_none'
-		&& $r->name != 'plg_editors_tinymce') {
+		&& $r->name != 'plg_editors_tinymce'
+		&& $mInfo->version) {
 		$line = array();
 		$line['type'] = $r->type;
 		$line['name'] = $r->name;
