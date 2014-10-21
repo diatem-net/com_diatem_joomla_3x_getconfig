@@ -7,7 +7,7 @@
     <author>Diatem</author>
     <authorEmail>contact@diatem.net</authorEmail>
     <authorUrl>http://www.diatem.net/</authorUrl>
-    <version>0.0.0</version>
+    <version>0.1.0</version>
     <description>Composant pour Joomla! 3.x.x. Implémente un service REST sécurisé permettant de récupérer à distance la version de Joomla! ainsi que des modules, composants et plugins utilisés.</description>
     
     
